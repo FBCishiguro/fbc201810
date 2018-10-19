@@ -284,13 +284,14 @@ header
 /*コンサル*/
 .post-358964 .boxes {background-image:url("../wsc7/img/page/consulting_1.png");background-repeat:no-repeat;background-position:center center;background-size:14%;}
 .post-358964 .boxes div{width:43%;background-color: #eee;padding:1rem;margin:2rem 0 0 0;}
-.post-358964 .boxes ol{padding-left:5%;}
-.post-358964 .boxes ol li{list-style-type:decimal;}
+.post-358964 ol, .post-358964 ul{padding-left:5%;}
+.post-358964 ol li{list-style-type:decimal;}
+.post-358964 ul li{list-style-type:disc;}
 .post-358964 .examples {display:table;margin-bottom:3%;}
 .post-358964 .examples p {display:table-cell;}
 .post-358964 .examples .column1{width:5%;}
-.post-358964 .samples {width:70%;margin:auto;align-items: center;}
-.post-358964 .samples img{width:70%;text-align:center;}
+.post-358964 .samples {width:70%;margin:auto;}
+.post-358964 .samples img{width:80%;margin:0 10%;}
 .post-358964 .samples p{text-align:center;}
 .post-358964 .contact .flex{padding:2% 10%;align-items: center;}
 .post-358964 .contact .flex img{display:inline-block;}
