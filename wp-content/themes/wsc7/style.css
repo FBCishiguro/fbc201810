@@ -1,5 +1,4 @@
 @charset "UTF-8";
-
 /*  
 Theme Name:WSC7
 Theme URI:http://www.studiobrain.net/wsc
@@ -18,7 +17,7 @@ License URI:http://www.gnu.org/licenses/gpl-2.0.html
 
 /*reset*/
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td{margin:0;padding:0;border:0;outline:0;background:transparent;}
-ol, ul, li{list-style:none;margin:0;padding:0;}
+ol, ul, li{list-style:none;}
 blockquote, q{quotes:none;}
 :focus{outline:0;}
 ins{text-decoration:none;}
@@ -27,20 +26,10 @@ table{border-collapse:collapse;border-spacing:0;}
 caption{width:100%;}
 a{outline:none;}
 
-/*clearfix*/
-.cf:before,.cf:after {content:"";display:block;overflow:hidden;}
-.cf:after {clear:both;}
-.cf {zoom:1;}
-.mb_cf{display:none;}
-@media screen and (max-width: 480px) {
-.cf_mb{clear:both;}
-}
-
 /*style*/
-html{width:100%;font-size:62.5%;}
-body{width:100%;font-size:1.4em;line-height:180%;letter-spacing: 0.05em;color:#333;font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "YuGothic M", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, sans-serif;-webkit-text-size-adjust:none;position: relative;}
+html{width:100%;font-size:62.5%;font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "YuGothic M", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, sans-serif;-webkit-text-size-adjust:none;}
+body{width:100%;font-size:1.4rem;line-height:180%;letter-spacing: 0.05em;color:#333;font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "YuGothic M", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, sans-serif;-webkit-text-size-adjust:none;position: relative;}
 h1,h2,h3,h4,h5,h6,p{margin:0px;}
-ul,ol{padding:0;margin:0px;}
 h1{font-size:2rem;line-height:200%;}
 h2{font-size:2rem;line-height:200%;}
 h3{font-size:1.8rem;line-height:200%;}
@@ -48,8 +37,7 @@ img{border:none;height:auto;max-width:100%}
 a{color:#1111cc;text-decoration: none;}
 a:hover{text-decoration:underline;}
 a img{vertical-align:bottom;}
-.screen-reader-text{display:none;}
-hr{background-color:#eee;border:0;height:1px;clear:both;margin:30px auto;}
+/*hr{background-color:#eee;border:0;height:1px;clear:both;margin:30px auto;}
 blockquote{margin:0px 0px 20px;padding:10px 15px;background-color:#f4f4f4;border:1px solid #ddd;border-radius:5px;-moz-border-radius:5px;}
 blockquote blockquote{margin:20px 0;background-color:#fff;}
 blockquote blockquote blockquote{margin:20px 0;background-color:#f4f4f4;}
@@ -68,17 +56,9 @@ object,embed{width:100%;display:block;margin:auto;}
 .sticky {background:#f8f8f8;margin:0 0 30px;padding:20px;}
 .sticky hr{display:none;}*/
 
-/*wrap*/
-@media screen and (min-width:1140px) {#container{max-width:1140px;}}
-@media screen and (max-width:480px) {#wrap{padding-top:0px;}}
-#main-wide{text-align:left;overflow:hidden;padding:20px 0;width:100%;}
-/*@media screen and (max-width:920px) {#main-wide{width:100%;}}*/
-#main-liquid{width:100%;padding:20px 0;}
-
 /******************************************************************************/
 header
 /******************************************************************************/
-
 /*header*/
 #header{position: fixed;left:0;top:0;width: 100%;background-color: #fff;display:block;box-shadow: 0 3px 9px 0 rgba(0,0,0,0.10), 0 0 0 1px rgba(0,0,0,0.04);}
 .header_top{margin:auto;display:-webkit-flex;display:flex;-webkit-justify-content:space-between;justify-content:space-between;align-items: center;-webkit-align-items: center;}
@@ -89,17 +69,17 @@ header
 /*検索フォーム*/
 #header-search{-webkit-flex:2;flex:2;text-align: center;}
 #header-search .s{height: 46px;width: 80%;background-color: #f7f7f7;border-radius: 4px;border: none;padding: 2% 3%;-webkit-box-sizing: border-box;box-sizing: border-box;}
-#header-search .searchsubmit{border:none;background: #999;padding: 1% 2%;color: #FFFFFF;font-size: 0.9em;}
+#header-search .searchsubmit{border:none;background: #999;padding: 1% 2%;color: #FFFFFF;}
 /*ログインフォーム*/
 #header-loginform{padding: 1% 1% 0 0;-webkit-flex: 1;flex: 1;text-align: right;}
-#header-loginform label{font-size:0.9rem;}
+#header-loginform label{font-size:1.4rem;}
 #header-loginform p{text-align:right;padding:0px;}
 #header-loginform input{margin:2px;padding:0px;}
 #header-loginform .input{width:200px;}
 #header-loginform .forgetmenot {margin:3px 0 0 80px;}
 /*ユーザー名表示*/
 #header-user_name{text-align:center;}
-#header-user_name p{font-size:1.2rem;margin:20px 20px 0 0;}
+#header-user_name p{font-size:1.4rem;margin:20px 20px 0 0;}
 #header-user_name a{height:40px;line-height:40px;margin-right:20px}
 /*メニュー*/
 .header_bottom ul{width: 80%;margin:auto;text-align: center;display:-webkit-flex;display:flex;-webkit-justify-content:space-around;justify-content:space-around;align-items: flex-end;-webkit-align-items: flex-end;}
@@ -111,39 +91,12 @@ header
 #related .header_bottom ul{width:100%;margin:0;}
 , .current_page_item
 
-
-/*モバイル用*/
-@media screen and (max-width: 480px){
-/*モバイル用 header*/
-#header{max-width:100%;height:40px;margin:0 0 3% 0;}
-#header-menu{display:none;}
-#site-description {display: none;}
-#header-loginform {display: none;}
-#site-title{height:40px;width:85px;margin:1% 0 0 3%;position:static;float:left;}
-/*モバイル用 メニュー*/
-#newest_letters_mb{background: #444 url("debut_dark.png") repeat;}
-#newest_letters_mb ul{margin:0px;padding:0px;}
-#newest_letters_mb ul li{text-decoration:none;}
-#newest_letters_mb a{text-decoration:none;color:#aaa;display:block;padding:7% 5%;width:100%;font-weight:bold;font-size:15px;
-    text-shadow:0-1px rgba(0,0,0,.5);border-bottom:1px solid rgba(0,0,0,.2);border-top:1px solid rgba(255,255,255,.1);
-    -webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;
-    -webkit-transition:background.3sease;-moz-transition:background.3sease;transition:background.3sease;}
-/*モバイル用 ログインフォーム*/
-#loginform_mb{background-color:#F1F4F6;padding:5% 0 5% 0;border-bottom:2px solid #E3E6E8;}
-#loginform_mb label{font-size:11px;}
-#loginform_mb p{text-align:right;}
-#loginform_mb .input{margin:2px;padding:0px;width:70%;height:20px;}
-#loginform_mb .forgetmenot {margin:3% 0 0 3%;width:50%;text-align:left;}
-#loginform_mb .submit {margin:2% 3% 0 0;}
-#loginform_mb .logout{margin:0 3% 0 0;}
-}
-
 /******************************************************************************/
 /*トップページ HOME*/
 /******************************************************************************/
 
-#content{width:100%;padding:3% 1% 1% 1%;box-sizing:border-box;background-color: #f7f7f7;}
-#content #home_main {-webkit-flex: 2;flex: 2;}
+#content{width:100%;padding:3% 1% 1% 1%;background-color: #f7f7f7;}
+/*#content #home_main {-webkit-flex: 2;flex: 2;}
 #content #home_left {-webkit-flex: 1;flex: 1;box-sizing: border-box;padding-right:2%;}
 #content #home_right{-webkit-flex: 1;flex: 1;box-sizing: border-box;padding-left:2%;}
 #content #page_main {-webkit-flex: 3;flex: 3;}
@@ -151,6 +104,7 @@ header
 /*フレックス*/
 .flex{display:-webkit-flex;display:flex;}
 .btw{-webkit-justify-content:space-between;justify-content:space-between;}
+.ard{-webkit-justify-content:space-aroung;justify-content:space-around;}
 
 /*影付き丸枠*/
 .shadow {background-color: #fff;box-shadow: 0 1px 3px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.04);}
@@ -313,7 +267,6 @@ header
 
 
 /*ニューズレター*/
-/******************************************************************************/
 .post-1363 .sech2 ul {width: 35%;height:100%;margin-right:1%;box-sizing:border-box;font-size:0.9em;}
 .post-1363 .sech2 ul li {list-style-type: disc;margin-left: 3%;}
 .post-1363 .sech2 ol {width: 65%;margin-left:1%;box-sizing:border-box;font-size:0.9em;}
@@ -328,9 +281,21 @@ header
 /*クリッピング*/
 .post-1156 .example{width:75%;margin:auto;}
 
-
-
-
+/*コンサル*/
+.post-358964 .boxes {background-image:url("../wsc7/img/page/consulting_1.png");background-repeat:no-repeat;background-position:center center;background-size:14%;}
+.post-358964 .boxes div{width:43%;background-color: #eee;padding:1rem;margin:2rem 0 0 0;}
+.post-358964 .boxes ol{padding-left:5%;}
+.post-358964 .boxes ol li{list-style-type:decimal;}
+.post-358964 .examples {display:table;margin-bottom:3%;}
+.post-358964 .examples p {display:table-cell;}
+.post-358964 .examples .column1{width:5%;}
+.post-358964 .samples {width:70%;margin:auto;align-items: center;}
+.post-358964 .samples img{width:70%;text-align:center;}
+.post-358964 .samples p{text-align:center;}
+.post-358964 .contact .flex{padding:2% 10%;align-items: center;}
+.post-358964 .contact .flex img{display:inline-block;}
+.post-358964 .contact .flex p{display:inline-block;}
+.post-358964 .contact {font-size:2rem;}
 /******************************************************************************/
 /*テーブル共通*/
 /******************************************************************************/
@@ -622,10 +587,6 @@ input.wpcf7-submit{cursor:pointer;border:none;background: #999;padding: 1% 2%;co
 /******************************************************************************/
 /*共通*/
 /******************************************************************************/
-/*フロート*/
-.left{float:left;}
-.right{float:right;}
-
 /*必須*/
 .hissu{color:#ff0000;}
 

@@ -1,12 +1,9 @@
-<?php
-/*
-Template Name: PageArchive
-*/
-?>
-<?php /* WordPress CMS Theme WSC Project. */ get_header(); ?>
-
-<div id="wrap">
-	<div id="main">
+<?php /* Template Name: PageArchive */ 
+      /* WordPress CMS Theme WSC Project. */ get_header(); ?>
+<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+    <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+        <section id="content" class="container-fluid">
+	<div id="main"  class="col-md-9">
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 		<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 			<?php the_content(__('more')); ?>
