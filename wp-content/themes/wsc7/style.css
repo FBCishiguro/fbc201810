@@ -68,6 +68,13 @@ ol li{list-style-type:decimal;}
 #globalSideMenu li li a p{padding:2% 0% 3% 0%;font-size:1.2rem;line-height:140%;}
 #globalSideMenu li li:before{content: "";border: 5px solid #D4005B;border-top: 4px solid transparent;border-right: 4px solid transparent;border-bottom: 4px solid transparent;margin-top: 5px;display: inline-block;vertical-align:top;}
 
+/*モバイルメニュー*/
+@media (max-width: 768px) {
+#navbarsGlobal{background-color:#eee;}
+#navbarsGlobal ul li{padding:1% 1% 1% 5%;}
+#navbarsGlobal ul li a{color:#333;}
+}
+
 /******************************************************************************/
 /*footer*/
 /******************************************************************************/

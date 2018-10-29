@@ -85,7 +85,7 @@ $accounttype3 = $current_user->account_type[3]; ?>
                 </ul>
             </div>
             <!-- ログインフォーム -->
-            <div id="header_right" class="LoginFormDiv col-md-3 d-none d-sm-block">
+            <div id="header_right" class="LoginFormDiv col-md-3">
                 <?php if (is_user_logged_in()) { ?>
                     <p class="text-right">
                         <?php echo $current_user->user_login . " 様ログイン中"; ?><br>
