@@ -25,13 +25,11 @@
 <?php } ?>
 
 <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-    <!---------------------------------------------header下全体--------------------------------------->
-    <section id="content" class="container-fluid">
-	<div class="row">
+    <div class="row">
 
-	<!-----------------------------------左メニュー--------------------------------->
-        <div id="home_left" class="col-md-3">
-            <nav class="left_menu">
+    <!-----------------------------------左メニュー--------------------------------->
+        <section id="cat_menu" class="d-none d-sm-block col-md-3">
+            <nav>
                 <h2>誌面区分ごとに過去の記事一覧を見る</h2>
                 <ul>
                     <?php 
@@ -42,17 +40,17 @@
                         'exclude'            => '40, 41',
                         'taxonomy'           => $taxonomies
                         ); ?>
-                    <?php wp_list_categories( $args ); ?>
+                    <?php wp_list_categories($args); ?>
                 </ul>
             </nav>
             <select name="archive-dropdown" onChange='document.location.href=this.options[this.selectedIndex].value;'>
                 <option value=""><p>バックナンバーを見る</p></option>
-                <?php wp_get_archives( array( 'type' => 'daily', 'format' => 'option', 'post_type'=>'ost' ) ); ?>
+                <?php wp_get_archives(array( 'type' => 'daily', 'format' => 'option', 'post_type'=>'ost')); ?>
             </select>
-        </div>
+        </section>
 
         <!------------------------------メインコンテンツ------------------------------>
-        <div id="home_main" class="col-md-6">
+        <section class="col-md-6 col">
             <?php $post = $posts[0]; ?>
             <h1><?php the_time(__('Y.n.j', 'wsc7')); ?>号ヘッドライン</h1>
 
@@ -65,7 +63,8 @@
                         <?php if (has_term($slug_sogo, $taxonomies)): ?>
                              <li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
                         <?php endif; ?>
-                    <?php endwhile; ?><?php endif; ?>
+                    <?php endwhile; ?>
+                    <?php endif; ?>
                 </ul>
             </article>
 
@@ -74,20 +73,21 @@
                 <h2><?php echo $name_cafe; ?></h2>
                 <ul class="shadow curve list_length">
                     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-                        <?php if (has_term($slug_cafe, $taxonomies)): ?>
+                        <?php if (has_term($slug_cafe, $taxonomies)) : ?>
                             <li>
                                 <a href="<?php the_permalink(); ?>">
                                     <div class="flex">
                                         <img src="<?php echo get_template_directory_uri(); ?>/img/pic/<?php echo $slug_cafe; ?>.jpg" />
-                                        <h3><?php the_title(); ?></h3>
+                                        <p class="title"><?php the_title(); ?></p>
                                     </div>
-                                    <?php if(mb_strlen($post->post_content, 'UTF-8')>110){
+                                    <?php if (mb_strlen($post->post_content, 'UTF-8')>110) {
                                             $content= mb_substr($post->post_content, 0, 110, 'UTF-8'); ?>
                                     <p><?php echo $content ?><span class="more_read"><?php echo '… 続きを読む' ?></span><?php } else {echo $post->post_content;} ?></p>
                                 </a>
                             </li>
                         <?php endif; ?>
-                    <?php endwhile; ?><?php endif; ?>
+                    <?php endwhile; ?>
+                    <?php endif; ?>
                 </ul>
             </article>
 
@@ -96,20 +96,21 @@
                 <h2><?php echo $name_startup; ?></h2>
                 <ul class="shadow curve list_length">
                     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-                        <?php if (has_term($slug_startup, $taxonomies)): ?>
+                        <?php if (has_term($slug_startup, $taxonomies)) : ?>
                             <li>
                                 <a href="<?php the_permalink(); ?>">
                                     <div class="flex">
                                         <img src="<?php echo get_template_directory_uri(); ?>/img/pic/<?php echo $slug_startup; ?>.jpg" />
                                         <h3><?php the_title(); ?></h3>
                                     </div>
-                                    <?php if(mb_strlen($post->post_content, 'UTF-8')>110){
+                                    <?php if (mb_strlen($post->post_content, 'UTF-8')>110) {
                                             $content= mb_substr($post->post_content, 0, 110, 'UTF-8'); ?>
                                     <p><?php echo $content ?><span class="more_read"><?php echo '… 続きを読む' ?></span><?php } else {echo $post->post_content;} ?></p>
                                 </a>
                             </li>
                         <?php endif; ?>
-                    <?php endwhile; ?><?php endif; ?>
+                    <?php endwhile; ?>
+                    <?php endif; ?>
                 </ul>
             </article>
 
@@ -120,23 +121,23 @@
                     <div class="list_news">
                         <ul class="shadow curve list_length">
                             <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-                                <?php if (has_term($slugm, $taxonomies)): ?>
+                                <?php if (has_term($slugm, $taxonomies)) : ?>
                                      <li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
                                 <?php endif; ?>
-                            <?php endwhile; ?><?php endif; ?>
+                            <?php endwhile; ?>
+                            <?php endif; ?>
                         </ul>
                     </div>
                     <?php ++$i; ?>
             <?php } ?>
-        </div>
+        </section>
 
-        <!------------------------------グローバルサイドメニュー------------------------------>
-        <div id="home_right" class="col-md-3">
-            <nav class="shadow"><?php wp_nav_menu(array('container_id' => 'global_side_menu', 'theme_location' => 'globalMenu', 'depth' => 2)); ?></nav>
-        </div>
+        <!----------------------------グローバルサイドメニュー---------------------------->
+        <?php wp_nav_menu(array('container_id' => 'globalSideMenu', 'theme_location' => 'globalMenu', 'depth' => 2, 'container_class' => 'col-md-3 d-none d-sm-block', 'menu_class' => 'shadow')); ?>
+
+    <!---row end--->
     </div>
-    </section>
+<!---postclass end--->
 </div>
 <div id="toTop"><a href="#header">▲このページのトップへ</a></div>
 <?php get_footer(); ?>
-

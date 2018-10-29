@@ -1,26 +1,24 @@
 <?php /* WordPress CMS Theme WSC Project. */ get_header(); ?>
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
     <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-        <!---------------------------------------------header下全体--------------------------------------->
-        <section id="content">
-        <div class="container-fluid">
         <div class="row">
-            <!----------------------------------プロフィール------------------------------->
-            <div id="home_left" class="col-md-3">
+            <!----------------------------------左カラム------------------------------->
+            <section class="d-none d-sm-block col-md-3">
+                <!----------------------------------プロフィール------------------------------->
                 <article id="profile" class="shadow list_pic">
-                    <a href="<?php echo home_url( '/' ); ?>/profil">
+                    <a href="<?php echo home_url('/'); ?>/profil">
                         <div class="flex">
                             <img src="<?php echo get_template_directory_uri(); ?>/img/profil.jpg" />
                             <h1><?php bloginfo('name'); wp_title(); ?> GmbH</h1>
                         </div>
-                        <p><?php bloginfo( 'description' ); ?><br>4誌の週刊ニューズレターを発行、市場調査や貿易業務も行います。</p>
+                        <p><?php bloginfo('description'); ?><br>4誌の週刊ニューズレターを発行、市場調査や貿易業務も行います。</p>
                         <p class="more">会社概要を見る</p>
                     </a>
                 </article>
                 <script type='text/javascript' src='https://darksky.net/widget/default/50.1109221,8.6821267/uk12/en.js?width=100%&height=350&title=Frankfurt&textColor=002678&bgColor=f7f7f7&transparency=false&skyColor=002678&fontFamily=Default&customFont=&units=uk&htColor=002678&ltColor=002678&displaySum=yes&displayHeader=yes'></script>
-            </div>
-            <!------------------------------メインコンテンツ------------------------------>
-            <div id="home_main" class="col-md-6">
+            </section>
+            <!------------------------------メインカラム------------------------------>
+            <section class="col-md-6 col">
                 <!-------------------------------------速報----------------------------------->
                 <article id="prompt_news" class="list_news">
                     <h2>速報記事</h2>
@@ -29,9 +27,9 @@
                         'order'                => 'DESC',
                         'post_type'            => 'post',
                         'post_status'        => 'publish', 
-                        'posts_per_page'    => '5'
+                        'posts_per_page'    => '10'
                     );
-                    $postlist = get_posts( $args ); ?>
+                    $postlist = get_posts($args); ?>
                     <ul class="list_length shadow curve">
                         <?php foreach ($postlist as $post) : setup_postdata($post); ?>
                         <li>
@@ -41,7 +39,7 @@
                             </a>
                         </li>
                         <?php endforeach; ?>
-                        <a class="more" href="<?php echo home_url( '/' ); ?>category">さらに読む</a>
+                        <a class="more" href="<?php echo home_url('/'); ?>category">さらに読む</a>
                     </ul>
                 </article>
                 <!-----------------------------------------無料記事-------------------------------->
@@ -60,23 +58,23 @@
                                 )
                             )
                         ); 
-                        $postlist = get_posts( $args); ?>
+                        $postlist = get_posts($args); ?>
                     <ul class="list_length shadow curve">
                         <?php foreach ($postlist as $post) : setup_postdata($post); ?>
                         <?php $kijitypelabel = get_post_type_object(get_post_type())->label; ?>
                         <li>
                             <a href="<?php the_permalink(); ?>">
-                                <h3><?php the_title(); ?></h3>
+                                <p class="title"><?php the_title(); ?></p>
                                 <p class="meta"><?php echo $kijitypelabel ?> | <?php the_time('n/j'); ?>号</p>
                             </a>
-                            <p><?php if(mb_strlen($post->post_content, 'UTF-8')>110){
+                            <p><?php if (mb_strlen($post->post_content, 'UTF-8')>110) {
                                     $content= mb_substr($post->post_content, 0, 110, 'UTF-8'); ?>
                                     <?php echo $content ?><a ="<?php the_permalink(); ?>"><?php echo '… 続きを読む' ?></a>
-                                <?php } else {echo $post->post_content;} ?>
+                                <?php } else {echo $post->post_content; } ?>
                             </p>
                         </li>
                         <?php endforeach; ?>
-                        <a class="more" href="<?php echo home_url( '/' ); ?>free_article">過去の無料記事を読む</a>
+                        <a class="more" href="<?php echo home_url('/'); ?>free_article">過去の無料記事を読む</a>
                     </ul>
                 </article>
                 <!-----------------------------------------コラム--------------------------------->
@@ -107,44 +105,41 @@
                         'order'                    => 'DESC',
                         'posts_per_page'        => 3
                     ); 
-                    $postlist = get_posts( $args ); ?>
+                    $postlist = get_posts($args); ?>
                     <ul class="list_length shadow curve">
                         <?php foreach ($postlist as $post) : setup_postdata($post); ?>
                         <?php $kijitype = esc_html(get_post_type_object(get_post_type())->name); ?>
                         <?php $kijitypelabel = get_post_type_object(get_post_type())->label; ?>
                         <li>
-                            <img class="right" src="
-                            <?php if( $kijitype == 'sc' ): ?>
-                                        <?php echo get_template_directory_uri(); ?>/img/topsc_cc.jpg" />
-                                    <?php elseif( $kijitype == 'ost' ): ?>
-                                        <?php echo get_template_directory_uri(); ?>/img/topost.jpg" />
-                                    <?php elseif( $kijitype == 'auto' ): ?>
-                                        <?php echo get_template_directory_uri(); ?>/img/topauto.jpg" />
-                                    <?php endif; ?>
                             <a href="<?php the_permalink(); ?>">
-                                <h3><?php the_title(); ?></h3>
+                                <img class="inline" src="
+                                <?php if ($kijitype == 'sc') : ?>
+                                            <?php echo get_template_directory_uri(); ?>/img/topsc_cc.jpg" />
+                                        <?php elseif ($kijitype == 'ost') : ?>
+                                            <?php echo get_template_directory_uri(); ?>/img/topost.jpg" />
+                                        <?php elseif ($kijitype == 'auto') : ?>
+                                            <?php echo get_template_directory_uri(); ?>/img/topauto.jpg" />
+                                        <?php endif; ?>
+                                <p class="title inline"><?php the_title(); ?></p>
                                 <p class="meta"><?php echo $kijitypelabel ?> | <?php the_time('n/j'); ?>号</p>
                             </a>
-                            <p><?php if(mb_strlen($post->post_content, 'UTF-8')>80){
+                            <p><?php if (mb_strlen($post->post_content, 'UTF-8')>80) {
                                     $content= mb_substr($post->post_content, 0, 80, 'UTF-8'); ?>
                                     <?php echo $content ?><a href="<?php the_permalink(); ?>"><?php echo ' … 続きを読む' ?></a>
-                                <?php } else {echo $post->post_content;} ?>
+                                <?php } else {echo $post->post_content; } ?>
                                 
                             </p>
                         </li>
                         <?php endforeach; ?>
-                        <a class="more" href="<?php echo home_url( '/' ); ?>archive-column">他のコラムも読む</a>
+                        <a class="more" href="<?php echo home_url('/'); ?>archive-column">他のコラムも読む</a>
                     </ul>
                 </article>
-            </div>
-            <!------------------------------事業内容メニュー------------------------------>
-            <div id="home_right" class="col-md-3">
-                <nav class="shadow"><?php wp_nav_menu( array( 'container_id' => 'global_side_menu', 'theme_location' => 'globalMenu', 'depth' => 2 ) ); ?></nav>
-            </div>
+            </section>
+            <!----------------------------グローバルサイドメニュー---------------------------->
+            <?php wp_nav_menu(array('container_id' => 'globalSideMenu', 'theme_location' => 'globalMenu', 'depth' => 2, 'container_class' => 'col-md-3 d-none d-sm-block', 'menu_class' => 'shadow')); ?>
         </div>
-        </div>
-        </section>
     </div>
-<?php endwhile; ?><?php endif; ?>
+<?php endwhile; ?>
+<?php endif; ?>
 <div id="toTop"><a href="#header">▲このページのトップへ</a></div>
 <?php get_footer(); ?>

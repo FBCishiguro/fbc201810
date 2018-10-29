@@ -27,8 +27,8 @@ caption{width:100%;}
 a{outline:none;}
 
 /*style*/
-html{width:100%;font-size:62.5%;font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "YuGothic M", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, sans-serif;-webkit-text-size-adjust:none;}
-body{width:100%;font-size:1.4rem;line-height:180%;letter-spacing: 0.05em;color:#333;font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "YuGothic M", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, sans-serif;-webkit-text-size-adjust:none;position: relative;}
+html{width:100%;font-size:62.5%;font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "YuGothic M", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, sans-serif;-webkit-text-size-adjust:none;background-color: #f7f7f7;}
+body{width:100%;padding-top:13rem;font-size:1.4rem;line-height:180%;letter-spacing: 0.05em;color:#333;font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "YuGothic M", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, sans-serif;-webkit-text-size-adjust:none;position: relative;}
 h1,h2,h3,h4,h5,h6,p{margin:0px;}
 h1{font-size:2rem;line-height:200%;}
 h2{font-size:2rem;line-height:200%;}
@@ -37,80 +37,93 @@ img{border:none;height:auto;max-width:100%}
 a{color:#1111cc;text-decoration: none;}
 a:hover{text-decoration:underline;}
 a img{vertical-align:bottom;}
-/*hr{background-color:#eee;border:0;height:1px;clear:both;margin:30px auto;}
-blockquote{margin:0px 0px 20px;padding:10px 15px;background-color:#f4f4f4;border:1px solid #ddd;border-radius:5px;-moz-border-radius:5px;}
-blockquote blockquote{margin:20px 0;background-color:#fff;}
-blockquote blockquote blockquote{margin:20px 0;background-color:#f4f4f4;}
-blockquote p{padding:0px;margin:0px 0px 0px 0px}
-object,embed{width:100%;display:block;margin:auto;}
-
-/*content
-.hentry{padding:0;overflow:hidden;}
-.hentry .pageTitle,
-.hentry .pageTitle a{text-decoration:none;font-size:18px;line-height:22px;}
- ul{margin-left:5%;padding-left:0px;}
+/* ul{margin-left:5%;padding-left:0px;}
  ol{margin-left:5%;padding-left:0px;}
-/*.hentry ul li{list-style-type:disc;}
-.hentry ol li{list-style-type:decimal;}
-.hentry .postmetadata{text-align:right;font-size:12px;clear:both;float:right;line-height:20px;}
+ul li{list-style-type:disc;}
+ol li{list-style-type:decimal;}
+.postmetadata{text-align:right;font-size:12px;clear:both;float:right;line-height:20px;}*/
 .sticky {background:#f8f8f8;margin:0 0 30px;padding:20px;}
-.sticky hr{display:none;}*/
+.sticky hr{display:none;}
 
-/******************************************************************************/
-header
 /******************************************************************************/
 /*header*/
-#header{position: fixed;left:0;top:0;width: 100%;background-color: #fff;display:block;box-shadow: 0 3px 9px 0 rgba(0,0,0,0.10), 0 0 0 1px rgba(0,0,0,0.04);}
-.header_top{margin:auto;display:-webkit-flex;display:flex;-webkit-justify-content:space-between;justify-content:space-between;align-items: center;-webkit-align-items: center;}
-.header_bottom{width:100%;}
-
-/*ロゴ*/
-#site-title{-webkit-flex: 1;flex: 1;}
-/*検索フォーム*/
-#header-search{-webkit-flex:2;flex:2;text-align: center;}
-#header-search .s{height: 46px;width: 80%;background-color: #f7f7f7;border-radius: 4px;border: none;padding: 2% 3%;-webkit-box-sizing: border-box;box-sizing: border-box;}
-#header-search .searchsubmit{border:none;background: #999;padding: 1% 2%;color: #FFFFFF;}
-/*ログインフォーム*/
-#header-loginform{padding: 1% 1% 0 0;-webkit-flex: 1;flex: 1;text-align: right;}
-#header-loginform label{font-size:1.4rem;}
-#header-loginform p{text-align:right;padding:0px;}
-#header-loginform input{margin:2px;padding:0px;}
-#header-loginform .input{width:200px;}
-#header-loginform .forgetmenot {margin:3px 0 0 80px;}
-/*ユーザー名表示*/
-#header-user_name{text-align:center;}
-#header-user_name p{font-size:1.4rem;margin:20px 20px 0 0;}
-#header-user_name a{height:40px;line-height:40px;margin-right:20px}
-/*メニュー*/
-.header_bottom ul{width: 80%;margin:auto;text-align: center;display:-webkit-flex;display:flex;-webkit-justify-content:space-around;justify-content:space-around;align-items: flex-end;-webkit-align-items: flex-end;}
-.header_bottom li{height: 100%;}
-.header_bottom li a{display: block;height: 100%;width: 100%;border-bottom:solid 2px transparent;padding:3px 0 10px 0;color: #333;}
-.header_bottom li a:hover {border-bottom:solid 2px #1111cc;text-decoration: none;}
-.header_bottom img{width:60px;height:60px;border-radius:100%;margin-bottom:3%;}
-
-#related .header_bottom ul{width:100%;margin:0;}
-, .current_page_item
+/******************************************************************************/
+/*グローバル トップメニュー*/
+.navbar{box-shadow: 0 3px 9px 0 rgba(0,0,0,0.10), 0 0 0 1px rgba(0,0,0,0.04);padding:0;font-size:1.2rem;}
+/*4誌*/
+#header_middle li a{display: block;height: 100%;width: 100%;color: #333;}
+#header_middle li a:hover {text-decoration: none;}
+#header_middle img{width:40px;height:40px;border-radius:100%;display:inline-block;}
+#header_middle p{display:inline-block;}
 
 /******************************************************************************/
-/*トップページ HOME*/
+/*グローバル サイドメニュー*/
 /******************************************************************************/
+#globalSideMenu a{color:#333;display:block;}
+#globalSideMenu a:hover{color: #1111cc;text-decoration: none;}
+#globalSideMenu .title a{border-top:solid 3px #002678;padding:5% 0% 2% 0%;background-color:#fff; font-size:1.6rem;  text-align:center; }
+#globalSideMenu ul{padding:0 1% 1% 1%;}
+#globalSideMenu li a{padding:3% 0% 3% 8%;background-color:#eee; font-weight:bold;  width:100%;margin-bottom:3%;box-sizing:border-box;}
+#globalSideMenu li li a{padding:0% 0% 3% 3%;background-color:#fff; font-weight:normal;width:93%;display: inline-block;}
+#globalSideMenu li li a p{padding:2% 0% 3% 0%;font-size:1.2rem;line-height:140%;}
+#globalSideMenu li li:before{content: "";border: 5px solid #D4005B;border-top: 4px solid transparent;border-right: 4px solid transparent;border-bottom: 4px solid transparent;margin-top: 5px;display: inline-block;vertical-align:top;}
 
-#content{width:100%;padding:3% 1% 1% 1%;background-color: #f7f7f7;}
-/*#content #home_main {-webkit-flex: 2;flex: 2;}
-#content #home_left {-webkit-flex: 1;flex: 1;box-sizing: border-box;padding-right:2%;}
-#content #home_right{-webkit-flex: 1;flex: 1;box-sizing: border-box;padding-left:2%;}
-#content #page_main {-webkit-flex: 3;flex: 3;}
+/******************************************************************************/
+/*footer*/
+/******************************************************************************/
+#footer{background-color:#fff;}
+#copyright{text-align:center;padding:0 0 20px;font-size:11px;}
 
+/******************************************************************************/
+/*枠組み, 共通 grid, common*/
+/******************************************************************************/
 /*フレックス*/
 .flex{display:-webkit-flex;display:flex;}
 .btw{-webkit-justify-content:space-between;justify-content:space-between;}
 .ard{-webkit-justify-content:space-aroung;justify-content:space-around;}
-
 /*影付き丸枠*/
 .shadow {background-color: #fff;box-shadow: 0 1px 3px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.04);}
 .curve {border-radius: 5px;}
 .in_pad{padding:1% 3%;}
+/*display:inline-block*/
+.inline{display: inline-block;}
+/*必須*/
+.hissu{color:#ff0000;}
+/*太字*/
+.bold{font-weight:bold;}
+/*コメントアウト*/
+.commentout{display: none;}
+/*色つきリンク*/
+.linkcolor {color:#1111cc;text-decoration:underline;}
+/*色つきリンク下線なし*/
+.linkcolornodec{color:#1111cc;text-decoration:none;}
+/*色なしリンク下線あり*/
+.linkdecnocolor{text-decoration:underline;color:#000000;}
+/*色なしリンク下線なし*/
+.nodec{text-decoration:none;color:#000000;}
+/*topへ*/
+#toTop{text-align:right;font-size:11px;line-height:19px;}
+.archive #toTop{margin-top:10px;}
+/*HOMEへ*/
+#toHome{text-align:right;font-size:11px;line-height:19px;}
+#toHome a{line-height:30px;padding:10px 10px 10px 35px;background:url(img/icon_home.jpg) no-repeat;background-size:30px;}
+/*検索フォーム*/
+.searchform .searchbox{height: 30px;width: 70%;background-color: #f7f7f7;border-radius: 4px;border: none;padding: 1% 2%;}
+.searchform .searchsubmit{border:none;background: #999;color: #FFFFFF;}
+/*ログインフォーム*/
+.loginform{text-align:right;width:100%;font-size:1.0rem;}
+.loginform p{padding:0px;}
+.loginform input{margin:1px;padding:0px;}
+/*ユーザー名表示*/
+#header-user_name{text-align:center;}
+#header-user_name p{margin:20px 20px 0 0;}
+#header-user_name a{height:40px;line-height:40px;margin-right:20px}
+/*タイトル*/
+.title{font-weight:bold;font-size:1.8rem;line-height:200%;}
 
+/******************************************************************************/
+/*トップページ HOME*/
+/******************************************************************************/
 /*記事リスト基本テンプレート*/
 .list_length {box-sizing: border-box;padding:1% 3% 1% 3%;margin-bottom: 5%;}
 .list_length li{padding:3% 0;border-bottom:dashed 1px #F2F2F2;}
@@ -118,7 +131,6 @@ header
 .list_length li a:hover{color: #1111cc;text-decoration: none;}
 
 /*無料記事*/
-.list_length .title{font-weight:bold;}
 .list_length .meta{font-size:1.2rem;padding:1% 0;}
 .list_length li p a{display:inline-block;color: #1111cc;font-size:1.2rem;padding-left:1%;}
 
@@ -146,7 +158,6 @@ header
 .list_pic .h_tanshin{width:65%;}
 .list_pic .h_tanshin h2, .h_tanshin h3{width:100%;line-height:130%;}
 
-
 /*コラム*/
 #read_column .list_length li img{width:60px;height:60px;border-radius:100%;}
 #read_column .list_length li .flex{margin-bottom:1%; -ms-flex-align: center;-webkit-align-items: center;align-items: center;}
@@ -156,22 +167,29 @@ header
 #read_column ul li{border-bottom:none;padding:1% 0;}
 .page-template-archive-column #read_column ul li .meta{padding:0 0 0 7%;-webkit-box-sizing: border-box;box-sizing: border-box;}
 
-
-/*グローバルサイドバー*/
-#home_right nav{box-sizing: border-box;padding:2% 3% 1% 3%;border-top:solid 3px #002678;}
-#home_right nav a{color:#333;display:block;}
-#home_right nav a:hover{color: #1111cc;text-decoration: none;}
-#home_right nav .title   a  {padding:3% 0% 3% 0%;background-color:#fff; font-size:1.6rem;  text-align:center; }
-#home_right nav ul li    a  {padding:3% 0% 3% 8%;background-color:#eee; font-weight:bold;  width:100%;margin-bottom:3%;box-sizing:border-box;}
-#home_right nav ul li li a  {padding:0% 0% 3% 3%;background-color:#fff; font-weight:normal;width:93%;display: inline-block;}
-#home_right nav ul li li a p{padding:2% 0% 3% 0%;font-size:1.2rem;line-height:140%;}
-#home_right nav ul li li:before{content: "";border: 5px solid #D4005B;border-top: 4px solid transparent;border-right: 4px solid transparent;border-bottom: 4px solid transparent;margin-top: 5px;display: inline-block;vertical-align:top;}
-
 /******************************************************************************/
-/*ヘッドライン*/
+/*ヘッドライン、アーカイブ*/
 /******************************************************************************/
-.post-type-archive h1 {text-align:center;}
-.post-type-archive select{margin-top:10%;padding:5% 3%;text-align:center;width:100%;font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "YuGothic M", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, sans-serif;}
+.archive h1, .page-template-archive-column h1 {text-align:center;font-weight:bold;}
+.archive h2, .page-template-archive-column h2 {font-weight:bold;}
+.archive h3, .page-template-archive-column h3 {font-weight:bold;}
+.archive .title, .page-template-archive-column .title{padding-left:2%;}
+.archive select, .page-template-archive-column select{margin-top:10%;padding:5% 3%;text-align:center;width:100%;font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "YuGothic M", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, sans-serif;}
+
+/*ヘッドライン, アーカイブの左メニュー*/
+#cat_menu {height: auto;width: 100%;}
+#cat_menu nav h2{font-size:1.4rem;}
+#cat_menu nav ul li a{color:#333;line-height:300%;display:block;padding:0 0 0 3%;}
+#cat_menu nav ul li a:hover{color:#1111cc;text-decoration:none;background-color:#eee;}
+.current-cat{background-color:#eee;}
+.current-cat a{font-weight:bold;}
+
+/*無料記事一覧の左メニュー*/
+.page-template-archive-column #cat_menu ul{margin:7% 0;margin-bottom:3%;}
+.page-template-archive-column #cat_menu li{padding-left:3%;box-sizing:border-box;}
+.page-template-archive-column #cat_menu p{font-size:1.4rem;font-weight:bold;}
+
+
 
 /******************************************************************************/
 /*各記事*/
@@ -189,6 +207,8 @@ header
 .single .kiji_text form p label{font-size: 1.1rem;}
 .single .kiji_text form .forgetmenot{display: inline-block;}
 .single .kiji_text form .submit{display: inline-block;}
+/*無料試読*/
+.single .free_monitor_in{width:100%;margin: 3% 0 0;}
 
 
 #related{width:85%;box-sizing:border-box;margin:3% 3% 0 auto;padding:1% 5%;}
@@ -198,24 +218,9 @@ header
 .yuzo_text{font-size:12px !important;padding:1%;display:block;}
 #page {width:85%;box-sizing:border-box;margin:0 3% 0 auto;padding:5%;}
 
-/******************************************************************************/
-/*無料記事一覧*/
-/******************************************************************************/
-#home_left nav {height: auto;width: 100%;}
-.left_menu li a{color:#333;line-height:300%;display:block;padding:0 0 0 3%;}
-.left_menu li a:hover{color:#1111cc;text-decoration:none;background-color:#eee;}
-.current-cat{background-color:#eee;}
-.current-cat a{font-weight:bold;}
-
-.left_menu h2{font-size:1.4rem;}
-.page-template-archive-column .left_menu ul{margin:7% 0;margin-bottom:3%;}
-.page-template-archive-column .left_menu ul li{padding-left:3%;box-sizing:border-box;}
-.page-template-archive-column .left_menu ul p{font-size:1.4rem;font-weight:bold;}
 
 
-
-
-/*モバイル用*/
+/*モバイル用
 #newest_letters_mb{display:none;}
 .nav-toggle {display:none;}
 #loginform_mb{display:none;}
@@ -244,6 +249,8 @@ header
 /*固定ページ*/
 /******************************************************************************/
 #page_main{width:100%;}
+#page_main h2{text-align:center;font-weight:bold;}
+#page_main h2 span{text-align:center;color:#D5045E;}
 #page_main .sech2{margin-bottom:5%;}
 #page_main .sech2 .each{margin-bottom:2%;}
 #page_main .sech2 .each:hover{background-color:#eee;}
@@ -251,11 +258,9 @@ header
 #page_main .sech2 h3{margin:2% 0 1% 0;}
 
 #midashi{position:relative;margin-bottom:5%;}
-#midashi h1{position:absolute;left:5%;top:13%;font-size:3rem;line-height:130%;}
+#midashi h1{position:absolute;left:5%;top:13%;font-size:3rem;line-height:130%;font-weight:bold;}
 #midashi h1 span{font-size:1.8rem;}
 #midashi img{width:100%;}
-#page_main h2{text-align:center;}
-#page_main h2 span{text-align:center;color:#D5045E;}
 
 /*会社情報*/
 .post-1393 p{margin-bottom:3%;}
@@ -297,6 +302,132 @@ header
 .post-358964 .contact .flex img{display:inline-block;}
 .post-358964 .contact .flex p{display:inline-block;}
 .post-358964 .contact {font-size:2rem;}
+
+
+/*調査レポート*/
+/******************************************************************************/
+.post-1182 .report_list_sum {margin:10px 0 10px 0;font-size:14px;position:relative;}
+.post-1182 .report_list_sum p{line-height:5em;}
+.post-1182 .report_list_sum a{color:#0000EE;font-size:12px;}
+.post-1182 .report_list_sum .big{font-weight:bold;font-size:15px;line-height:30px;}
+.post-1182 .button_shosai{margin:20px 0px 20px 20px;}
+.post-1182 h2{margin-top:30px;}
+.post-1182 h2 a{color:#0000EE;}
+.post-1182 .to_eachnews_detail{width:100%;}
+
+/*過去調査レポート*/
+.post-1182 .contactform h3{width:90%;margin:2% 0 2% -1%;}
+#wpcf7-f1214-p1182-o2 {margin:5% 0 5% 0;}
+#wpcf7-f1214-p1182-o2 td{padding-left:5%;}
+#wpcf7-f1214-p1182-o2 .tr_title{width:20%;}
+#wpcf7-f1214-p1182-o2 a{color:#0000EE;font-size:12px;}
+
+/*インダストリー4.0*/
+.page h3 {padding:1% 0 0 0;}
+.page h3:before {content:"◆ ";}
+.post-302364 .iot {padding-top:5%;text-align: center; }
+.post-302364 .small{font-weight: normal;font-size: 0.9em;}
+.post-302364 .select_iot td{padding:1% 0 5% 1%;font-weight: bold;}
+.post-302364 .select_iot .top{text-align: center;}
+.post-302364 .select_iot .top td{padding-bottom:1%;text-align: center;}
+.post-302364 .info_iot input{border: none;height: 35px;padding: 1px;width:90%}
+.post-302364 .info_iot td{padding-left:5%;font-weight: bold;}
+.post-302364 .info_iot textarea{height: 60px;border: none;}
+.post-302364 .service_each a{padding:5% 5% 0 0;display: inline-block;}
+.post-302364 .info_iot .column1{width: 40%;}
+
+
+/*調査*/
+/******************************************************************************/
+.post-1164 .service_big{margin-bottom:10%;}
+.post-1164 .service_each{position:relative;margin-bottom:3%;width:46%;}
+.post-1164 .to_eachnews_detail{width:99%;}
+.post-1164 .service_each_intro{padding:0 0 8% 0;}
+.post-1164 h3{margin:30px 0px 0px 0px;}
+
+/*ロングリストショートリスト*/
+/******************************************************************************/
+.post-1143 .list_midashi{margin:30px 0 0 0;font-weight:bold;text-align:center;}
+
+
+/*使い方*/
+/******************************************************************************/
+.post-51639 {padding-top:5px}
+.post-51639 h2{width:500px;background-color:#E9E9E9;background-image:none;height:47px;line-height:50px;color:#000000;font-size:25px;border-bottom:solid 3px #FF9900;margin-top:50px;}
+.post-51639 p{font-size:14px;font-weight:bold;}
+.post-51639 .rot{color:#CC0000;}
+.post-51639 img{margin:15px 0 10px 0;border:solid 2px #7F7F7F;}
+.post-51639 .img_yajirushi{margin:0 0 0 200px;border:none;}
+.post-51639 .pos_act{font-size:14px;width:490px;margin:20px 0 20px 0;padding:10px 0 10px 30px;border:solid 2px #FF9900;}
+.post-51639 .pos_act_title{font-weight:bold;border-bottom:solid 1px #000000;margin-bottom:10px;}
+.post-51639 .pos_act_link{font-weight:bold;font-size:15px;color:#000000;}
+
+/*総括版*/
+/******************************************************************************/
+.post-52551 h3{font-weight:bold;text-align:center;border-bottom:solid 1px #FF9900;font-size:15px;margin:10px 0 30px 0;padding-bottom:10px;}
+.post-52551  .sum_nummer{width:50px;padding-left:40px;}
+.post-52551 .sum_title{width:170px;padding-left:80px;}
+.post-52551 .sum_kizi_nummer{width:90px;padding-left:30px;}
+.post-52551 .sum_price{width:58px;padding-left:40px;}
+.post-52551 .sum_order_nummer_box {width:50px;}
+
+/*ドイツ語deutsch*/
+/******************************************************************************/
+.post-12001 .each_pagede{width:47%;}
+.post-12001 .bold{margin: 3% 0 3% 0;}
+.post-12001 .de_ibs{margin:3% 0 0 0;padding:0 0 0 35%;background:url(img/service_report.jpg) no-repeat;}
+.post-12001 .de_tc{margin:3% 0 0 0;padding:0 0 0 35%;background:url(img/service_trading.jpg) no-repeat;}
+.post-12001 .page_de .each_title{margin-top:5%;}
+.post-12001 li{font-size:14px;margin-bottom:2%;}
+
+/*ドイツ語系共通*/
+.page_de .page_intro{text-align:center;}
+.page_de .wpcf7{margin:3% 0 0 0;}
+.page_de .wpcf7 textarea{height:200px;}
+
+
+
+/******************************************************************************/
+/*検索結果 search.php*/
+/******************************************************************************/
+.each_search h3{display:inline-block;}
+.each_search .meta{display:inline-block;float:right;}
+.each_search .tax a{display:inline-block;background-color: #aaa;color: #fff;padding:0 1%;border-radius:10px;margin: 0 1% 0 0;font-size: 0.9em;}
+.each_search .tax a:hover{color: #fff; box-shadow: 4px 4px 8px gray;}
+
+
+
+/******************************************************************************/
+lp
+/******************************************************************************/
+section{text-align: center;margin: auto;}
+#link_contact{font-size:1em;font-family:Arial;text-align:center;text-decoration:none;opacity: 1;cursor: pointer;background-color: #117BB8;color: #fff;border: none;padding: .5em 2.5em;width: max-content;border-radius: 1em;display: block;margin: 3% auto}
+
+#top{position: relative;}
+#top div {position: absolute;top: 10%;left: 5%;}
+#top #subttl {font-weight: bold;font-size: 1.5em;padding: 0 0 8% 1%;}
+#top #link_contact {margin: 0;}
+#why p{text-align: left;}
+#why img{width: 150px;}
+#examples table{width: 80%;margin: 0 auto;}
+#profil table{width: 70%;margin: 0 auto;font-size: 0.9em;}
+#profil table td{padding: 1%;}
+#profil table .column-2{padding-left: 5%;}
+#contact form{width: 70%;margin: 0 auto;}
+
+/*モバイル用*/
+@media screen and (max-width: 480px){
+#top div h1{font-size: 1.5em;}
+#top div #subttl{font-size: 1.2em;}
+#examples table{width: 96%;}
+#profil table{width: 96%;}
+#contact form{width: 96%;margin: 0 auto;}
+}
+
+
+
+
+
 /******************************************************************************/
 /*テーブル共通*/
 /******************************************************************************/
@@ -365,29 +496,6 @@ header
 input.wpcf7-submit{cursor:pointer;border:none;background: #999;padding: 1% 2%;color: #FFFFFF;display:block;font-size: 0.9em;width:30%;margin:auto;border-radius:5px;}
 
 
-.sticky hr{display:none;}
-
-
-
-
-
-/******************************************************************************/
-/*検索結果 search.php*/
-/******************************************************************************/
-.each_search h3{display:inline-block;}
-.each_search .meta{display:inline-block;float: right;}
-.each_search .tax a{display:inline-block;background-color: #aaa;color: #fff;padding:0 1%;border-radius:10px;margin: 0 1% 0 0;font-size: 0.9em;}
-.each_search .tax a:hover{color: #fff; box-shadow: 4px 4px 8px gray;}
-
-/*検索フォーム*/
-.search_box{-webkit-flex:2;flex:2;text-align: center;}
-.search_box .s{height: 46px;width: 80%;background-color: #f7f7f7;border-radius: 4px;border: none;padding: 2% 3%;-webkit-box-sizing: border-box;box-sizing: border-box;}
-.search_box .searchsubmit{border:none;background: #999;padding: 1% 2%;color: #FFFFFF;font-size: 0.9em;}
-
-
-
-
-
 
 
 
@@ -433,13 +541,11 @@ input.wpcf7-submit{cursor:pointer;border:none;background: #999;padding: 1% 2%;co
 #totheetc .right li{float:left;width:50%;}
 #totheetc .right li a{font-size:13px;color:rgba(59, 59, 59, 0.9);}
 
-/*無料試読*/
-.single .free_monitor_in{width:100%;margin: 3% 0 0;}
 
 /******************************************************************************/
 /*アーカイブ*/
 /******************************************************************************/
-/*ヘッドライン*/
+/*ヘッドライン
 .arc_hl_year {width:100%;height:50px;margin-bottom:0.5%;}
 .arc_hl_year li{font-size:13px;font-weight:bold;width:100px;text-align:center;line-height:30px;margin-left:5%;background-color:#117BB8;}
 .arc_hl_year li a{color:#ffffff;display:block;text-decoration:none;}
@@ -450,16 +556,10 @@ input.wpcf7-submit{cursor:pointer;border:none;background: #999;padding: 1% 2%;co
 .arc_each_article ul{margin-left:5%;}
 .arc_each_article li a{font-size:14px;color:rgba(58, 58, 58, 0.8);text-decoration:none;}
 
-/******************************************************************************/
-/*固定ページ*/
-/******************************************************************************/
-.page .page_intro{font-weight:bold;font-size:24px;line-height:130%;margin:50px 0 0px 0;}
-
-
 
 
 /*事業内容*/
-/******************************************************************************/
+/*****************************************************************************
 .post-1095 .service_each .left{line-height:130px;width:30%;display:block;text-indent:-9999px;}
 .post-1095 .service_each .right{width:65%;font-size:14px;} 
 #service_newsletter{background:url(img/service_newsletter.jpg) no-repeat;}
@@ -468,53 +568,9 @@ input.wpcf7-submit{cursor:pointer;border:none;background: #999;padding: 1% 2%;co
 #service_help{background:url(img/service_help.jpg) no-repeat;}
 #service_trading{background:url(img/service_trading.jpg) no-repeat;}
 
-/*調査レポート*/
-/******************************************************************************/
-.post-1182 .report_list_sum {margin:10px 0 10px 0;font-size:14px;position:relative;}
-.post-1182 .report_list_sum p{line-height:5em;}
-.post-1182 .report_list_sum a{color:#0000EE;font-size:12px;}
-.post-1182 .report_list_sum .big{font-weight:bold;font-size:15px;line-height:30px;}
-.post-1182 .button_shosai{margin:20px 0px 20px 20px;}
-.post-1182 h2{margin-top:30px;}
-.post-1182 h2 a{color:#0000EE;}
-.post-1182 .to_eachnews_detail{width:100%;}
-
-/*過去調査レポート*/
-.post-1182 .contactform h3{width:90%;margin:2% 0 2% -1%;}
-#wpcf7-f1214-p1182-o2 {margin:5% 0 5% 0;}
-#wpcf7-f1214-p1182-o2 td{padding-left:5%;}
-#wpcf7-f1214-p1182-o2 .tr_title{width:20%;}
-#wpcf7-f1214-p1182-o2 a{color:#0000EE;font-size:12px;}
-
-/*インダストリー4.0*/
-.page h3 {padding:1% 0 0 0;}
-.page h3:before {content:"◆ ";}
-.post-302364 .iot {padding-top:5%;text-align: center; }
-.post-302364 .small{font-weight: normal;font-size: 0.9em;}
-.post-302364 .select_iot td{padding:1% 0 5% 1%;font-weight: bold;}
-.post-302364 .select_iot .top{text-align: center;}
-.post-302364 .select_iot .top td{padding-bottom:1%;text-align: center;}
-.post-302364 .info_iot input{border: none;height: 35px;padding: 1px;width:90%}
-.post-302364 .info_iot td{padding-left:5%;font-weight: bold;}
-.post-302364 .info_iot textarea{height: 60px;border: none;}
-.post-302364 .service_each a{padding:5% 5% 0 0;display: inline-block;}
-.post-302364 .info_iot .column1{width: 40%;}
-
-
-/*調査*/
-/******************************************************************************/
-.post-1164 .service_big{margin-bottom:10%;}
-.post-1164 .service_each{position:relative;margin-bottom:3%;width:46%;}
-.post-1164 .to_eachnews_detail{width:99%;}
-.post-1164 .service_each_intro{padding:0 0 8% 0;}
-.post-1164 h3{margin:30px 0px 0px 0px;}
-
-/*ロングリストショートリスト*/
-/******************************************************************************/
-.post-1143 .list_midashi{margin:30px 0 0 0;font-weight:bold;text-align:center;}
 
 /*検索*/
-/******************************************************************************/
+/*****************************************************************************
 .search_nl{width:25%;}
 .search_nl .search_newstitel{font-size:20px;}
 .search_nl .to_eachsearch{padding:25% 0 0 45%;height:100px;font-size:17px;cursor:pointer;}
@@ -538,88 +594,18 @@ input.wpcf7-submit{cursor:pointer;border:none;background: #999;padding: 1% 2%;co
 .search .kensaku_info{text-align:right;}
 .each_search{margin-bottom:5%;}
 
-/*使い方*/
-/******************************************************************************/
-.post-51639 {padding-top:5px}
-.post-51639 h2{width:500px;background-color:#E9E9E9;background-image:none;height:47px;line-height:50px;color:#000000;font-size:25px;border-bottom:solid 3px #FF9900;margin-top:50px;}
-.post-51639 p{font-size:14px;font-weight:bold;}
-.post-51639 .rot{color:#CC0000;}
-.post-51639 img{margin:15px 0 10px 0;border:solid 2px #7F7F7F;}
-.post-51639 .img_yajirushi{margin:0 0 0 200px;border:none;}
-.post-51639 .pos_act{font-size:14px;width:490px;margin:20px 0 20px 0;padding:10px 0 10px 30px;border:solid 2px #FF9900;}
-.post-51639 .pos_act_title{font-weight:bold;border-bottom:solid 1px #000000;margin-bottom:10px;}
-.post-51639 .pos_act_link{font-weight:bold;font-size:15px;color:#000000;}
-
-/*総括版*/
-/******************************************************************************/
-.post-52551 h3{font-weight:bold;text-align:center;border-bottom:solid 1px #FF9900;font-size:15px;margin:10px 0 30px 0;padding-bottom:10px;}
-.post-52551  .sum_nummer{width:50px;padding-left:40px;}
-.post-52551 .sum_title{width:170px;padding-left:80px;}
-.post-52551 .sum_kizi_nummer{width:90px;padding-left:30px;}
-.post-52551 .sum_price{width:58px;padding-left:40px;}
-.post-52551 .sum_order_nummer_box {width:50px;}
-
-/*ドイツ語deutsch*/
-/******************************************************************************/
-.post-12001 .each_pagede{width:47%;}
-.post-12001 .bold{margin: 3% 0 3% 0;}
-.post-12001 .de_ibs{margin:3% 0 0 0;padding:0 0 0 35%;background:url(img/service_report.jpg) no-repeat;}
-.post-12001 .de_tc{margin:3% 0 0 0;padding:0 0 0 35%;background:url(img/service_trading.jpg) no-repeat;}
-.post-12001 .page_de .each_title{margin-top:5%;}
-.post-12001 li{font-size:14px;margin-bottom:2%;}
-
-/*ドイツ語系共通*/
-.page_de .page_intro{text-align:center;}
-.page_de .wpcf7{margin:3% 0 0 0;}
-.page_de .wpcf7 textarea{height:200px;}
-
-
 
 /******************************************************************************/
 /*アーカイブ*/
 /******************************************************************************/
-/*ヘッドライン*/
+/*ヘッドライン
 .arc_hl_year {width:100%;height:50px;}
 .arc_hl_year li{font-size:13px;font-weight:bold;width:100px;text-align:center;line-height:30px;margin-left:5%;background-color:#117BB8;}
 .arc_hl_year li a{color:#ffffff;display:block;text-decoration:none;}
 .arc_each_article a{text-decoration:none;color:rgba(58, 58, 58, 0.8);}
 
 
-/******************************************************************************/
-/*共通*/
-/******************************************************************************/
-/*必須*/
-.hissu{color:#ff0000;}
 
-/*太字*/
-.bold{font-weight:bold;}
-
-/*コメントアウト*/
-.commentout{display: none;}
-
-/*色つきリンク*/
-.linkcolor {color:#1111cc;text-decoration:underline;}
-
-/*色つきリンク下線なし*/
-.linkcolornodec{color:#1111cc;text-decoration:none;}
-
-/*色なしリンク下線あり*/
-.linkdecnocolor{text-decoration:underline;color:#000000;}
-
-/*色なしリンク下線なし*/
-.nodec{text-decoration:none;color:#000000;}
-
-/*topへ*/
-#toTop{text-align:right;font-size:11px;line-height:19px;}
-.archive #toTop{margin-top:10px;}
-
-/*HOMEへ*/
-#toHome{text-align:right;font-size:11px;line-height:19px;}
-#toHome a{line-height:30px;padding:10px 10px 10px 35px;background:url(img/icon_home.jpg) no-repeat;background-size:30px;}
-
-/*過去見出しアーカイブ*/
-.kako_archive{margin:20px 0 0 10px;}
-.kako_archive h3{font-size:18px;margin-bottom:10px;}
 
 /******************************************************************************/
 /*サイドボックス*/
@@ -739,25 +725,20 @@ li#menu-item-157131.current_page_item{background:url(img/menu_search.jpg) no-rep
 li#menu-item-157261.current_page_item{background:url(img/menu_support.jpg) no-repeat;background-size:70px;background-position:30px 0;}
 li#menu-item-157111.current_page_item{background:url(img/menu_access.jpg) no-repeat;background-size:70px;background-position:30px 0;}
 
-/*footer*/
-#footer{clear:both;background-color:#ccc;padding:0;}
-#footer-wrap{max-width:900px;margin:auto;}
-#footer-bottom{max-width:900px;margin:auto;padding:10px 0 0;}
-#copyright{text-align:center;padding:0 0 20px;font-size:11px;}
 /*@media screen and (max-width:920px) {#copyright{margin-right:10px;}}*/
 
-/*footer-widget*/
+/*footer-widget
 #footer-wrap{clear:both;margin:0 auto;}
 #footer-widget-area{float:left;width:100%;margin:0;}
 .footer-widget{padding:15px 0;margin:0 10px 0 0;float:left;width:215px;}
 /*@media screen and (max-width:920px) {.footer-widget{margin:0 0 0 10px;}}*/
-/*@media screen and (max-width:480px) {.footer-widget{border-bottom:1px dotted #fff;width:auto;display:block;float:none;}}*/
+/*@media screen and (max-width:480px) {.footer-widget{border-bottom:1px dotted #fff;width:auto;display:block;float:none;}}
 .footer-widget .widget_title{margin:0;font-weight:bold;}
 .footer-widget ul{margin:0;}
 .footer-widget p{margin:0;}
 .footer-widget img{max-width:195px;}
 
-/*footer-menu*/
+/*footer-menu
 #footer-menu{clear:both;}
 #footer-menu ul{float:left;margin:0;padding:0;}
 #footer-menu li{float:left;border-right:1px solid #eee;padding:0 10px;margin:0 0 10px;}
@@ -817,7 +798,7 @@ img.alignright{float:right;padding:7px;margin:0 0 20px 20px;background-color:#ee
 .form-allowed-tags {font-size:11px;line-height:15px;color:#999;}
 .form-submit #submit{margin:10px auto;width:218px;display:block;cursor:pointer;padding:0;border:1px solid #aaa;font-size:13px;line-height:20px;border-radius:5px;-moz-border-radius:5px;background-color:#fff9d3;}
 
-/*モバイル用*/
+/*モバイル用
 @font-face{
 font-family:"responsivenav";src:url("../icons/responsivenav.eot");
 src:url("../icons/responsivenav.eot?#iefix")format("embedded-opentype"),
@@ -826,7 +807,7 @@ url("../icons/responsivenav.woff")format("woff"),
 url("../icons/responsivenav.svg#responsivenav")format("svg");
 font-weight:normal;font-style:normal;}
 
-/*モバイル用 HOME*/
+/*モバイル用 HOME
 @media screen and (max-width: 480px){
 #home_top {display: none;}
 #home_widgets #home_bottom_right{display:none;}
@@ -850,7 +831,7 @@ font-weight:normal;font-style:normal;}
 #read_column li a{font-size:13px;}
 }
 
-/*モバイル用 速報記事*/
+/*モバイル用 速報記事
 @media screen and (max-width: 480px){
 #side{display:none;}
 #kiji_sum .tags{display:none;}
@@ -871,15 +852,15 @@ font-weight:normal;font-style:normal;}
 }
 
 
-/*モバイル用 nav.js*/
+/*モバイル用 nav.js
 @media screen and (max-width: 480px) {
 .js .nav-collapse {clip: rect(0 0 0 0);max-height:0;position:absolute;display:block;overflow: hidden;}
 .toggle_mb {-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;-webkit-touch-callout:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;text-decoration:none;position:relative;overflow:hidden;width:50px;height:40px;display:block;}
 .toggle_mb:before{font-family:"responsivenav";font-style:normal;font-weight:normal;font-variant:normal;font-size:28px;text-transform:none;text-indent:0;text-align:center;line-height:40px;speak:none;width:100%;position:absolute;top:0;left:0;}
-/*モバイル用 ログインフォーム*/
+/*モバイル用 ログインフォーム
 .loginform-toggle{margin:6% 0 0 35%;text-decoration:none;}
 .loginform-toggle.active:before{text-decoration:none;}
-/*モバイル用 メニュー*/
+/*モバイル用 メニュー
 .nav-toggle{margin: 2% 3% 0 0;text-indent:-999px;}
 .nav-toggle:before{content:"\2261";}
 .nav-toggle.active:before{font-size:24px;content:"\78";}

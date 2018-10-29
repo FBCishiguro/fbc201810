@@ -17,23 +17,29 @@
 <?php $terms = get_terms($taxonomies, $args); ?>
 <?php foreach ($terms as $term) { ?>
     <?php $slug = $term->slug; ?>
-    <?php     if    ($slug === $slug_sogo)        { $name_sogo    = $term->name; }
-        else if    ($slug === $slug_mame)        { $name_mame    = $term->name; }
-        else if    ($slug === $slug_tanshin)    { $name_tanshin    = $term->name; }
-        else if    ($slug === $slug_keiri)        { $name_keiri    = $term->name; }
-        else if    ($slug === $slug_medemiru)    { $slug            = null; }
-        else if    ($slug === $slug_kawase)    { $slug            = null; }
-        else                                { $slugs_main[]    = $slug; $names_main[] = $term->name; } ?>
+    <?php if ($slug === $slug_sogo) {
+        $name_sogo = $term->name; 
+    } else if ($slug === $slug_mame) {
+        $name_mame    = $term->name;
+    } else if ($slug === $slug_tanshin) {
+        $name_tanshin    = $term->name;
+    } else if ($slug === $slug_keiri) {
+        $name_keiri    = $term->name;
+    } else if ($slug === $slug_medemiru) {
+        $slug = null;
+    } else if ($slug === $slug_kawase) {
+        $slug = null;
+    } else {
+        $slugs_main[] = $slug; $names_main[] = $term->name; 
+    } ?>
 <?php } ?>
 
 <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-    <!---------------------------------------------header下全体--------------------------------------->
-    <section id="content" class="container-fluid">
-	<div class="row">
+    <div class="row">
 
-	<!-----------------------------------左メニュー--------------------------------->
-        <div id="home_left" class="col-md-3">
-            <nav class="left_menu">
+        <!-----------------------------------左メニュー--------------------------------->
+        <section id="cat_menu" class="d-none d-sm-block col-md-3">
+            <nav>
                 <h2>誌面区分ごとに過去の記事一覧を見る</h2>
                 <ul>
                     <?php 
@@ -43,18 +49,18 @@
                         'title_li'           => '',
                         'exclude'            => '1032, 1033',
                         'taxonomy'           => $taxonomies
-                        ); ?>
-                    <?php wp_list_categories( $args ); ?>
+                    ); ?>
+                    <?php wp_list_categories($args); ?>
                 </ul>
             </nav>
             <select name="archive-dropdown" onChange='document.location.href=this.options[this.selectedIndex].value;'>
                 <option value=""><p>バックナンバーを見る</p></option>
-                <?php wp_get_archives( array( 'type' => 'daily', 'format' => 'option', 'post_type'=>'sc' ) ); ?>
+                <?php wp_get_archives(array( 'type' => 'daily', 'format' => 'option', 'post_type'=>'ost')); ?>
             </select>
-        </div>
+        </section>
 
         <!------------------------------メインコンテンツ------------------------------>
-        <div id="home_main" class="col-md-6">
+        <section class="col-md-6 col">
             <?php $post = $posts[0]; ?>
             <h1><?php the_time(__('Y.n.j', 'wsc7')); ?>号ヘッドライン</h1>
 
@@ -63,10 +69,11 @@
                 <h2><?php echo $name_sogo; ?></h2>
                 <ul class="shadow curve list_length">
                     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-                        <?php if (has_term($slug_sogo, $taxonomies)): ?>
+                        <?php if (has_term($slug_sogo, $taxonomies)) : ?>
                              <li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
                         <?php endif; ?>
-                    <?php endwhile; ?><?php endif; ?>
+                    <?php endwhile; ?>
+                    <?php endif; ?>
                 </ul>
             </article>
 
@@ -75,20 +82,21 @@
                 <h2><?php echo $name_mame; ?></h2>
                 <ul class="shadow curve list_length">
                     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-                        <?php if (has_term($slug_mame, $taxonomies)): ?>
+                        <?php if (has_term($slug_mame, $taxonomies)) : ?>
                             <li>
                                 <a href="<?php the_permalink(); ?>">
                                     <div class="flex">
                                         <img src="<?php echo get_template_directory_uri(); ?>/img/pic/<?php echo $slug_mame; ?>.jpg" />
-                                        <h3><?php the_title(); ?></h3>
+                                        <p class="title"><?php the_title(); ?></p>
                                     </div>
-                                    <?php if(mb_strlen($post->post_content, 'UTF-8')>110){
+                                    <?php if (mb_strlen($post->post_content, 'UTF-8')>110) {
                                             $content= mb_substr($post->post_content, 0, 110, 'UTF-8'); ?>
                                     <p><?php echo $content ?><span class="more_read"><?php echo '… 続きを読む' ?></span><?php } else {echo $post->post_content;} ?></p>
                                 </a>
                             </li>
                         <?php endif; ?>
-                    <?php endwhile; ?><?php endif; ?>
+                    <?php endwhile; ?>
+                    <?php endif; ?>
                 </ul>
             </article>
 
@@ -97,42 +105,44 @@
                 <h2><?php echo $name_tanshin; ?></h2>
                 <ul class="shadow curve list_length">
                     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-                        <?php if (has_term($slug_keiri, $taxonomies)): ?>
+                        <?php if (has_term($slug_keiri, $taxonomies)) : ?>
                             <?php $keiri = 0; ?>
                         <?php endif; ?>
-                        <?php if (has_term($slug_tanshin, $taxonomies)): ?>
+                        <?php if (has_term($slug_tanshin, $taxonomies)) : ?>
                             <li>
                                 <div class="flex">
                                     <img src="<?php echo get_template_directory_uri(); ?>/img/pic/<?php echo $slug_tanshin; ?>.jpg" />
-                                    <h3><?php the_title(); ?></h3>
+                                    <p class="title"><?php the_title(); ?></p>
                                 </div>
                                 <?php echo $post->post_content; ?></p>
                             </li>
                         <?php endif; ?>
-                    <?php endwhile; ?><?php endif; ?>
+                    <?php endwhile; ?>
+                    <?php endif; ?>
                 </ul>
             </article>
 
             <!---------------------------------経理--------------------------->
-            <?php if ($keiri === 0): ?>
+            <?php if ($keiri === 0) : ?>
                 <article id="read_column">
                     <h2><?php echo $name_keiri; ?></h2>
                     <ul class="shadow curve list_length">
                         <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-                            <?php if (has_term($slug_keiri, $taxonomies)): ?>
+                            <?php if (has_term($slug_keiri, $taxonomies)) : ?>
                                 <li>
                                     <a href="<?php the_permalink(); ?>">
                                         <div class="flex">
                                             <img src="<?php echo get_template_directory_uri(); ?>/img/pic/<?php echo $slug_keiri; ?>.jpg" />
-                                            <h3><?php the_title(); ?></h3>
+                                            <p class="title"><?php the_title(); ?></p>
                                         </div>
-                                        <?php if(mb_strlen($post->post_content, 'UTF-8')>110){
+                                        <?php if (mb_strlen($post->post_content, 'UTF-8')>110) {
                                                 $content= mb_substr($post->post_content, 0, 110, 'UTF-8'); ?>
                                         <p><?php echo $content ?><span class="more_read"><?php echo '… 続きを読む' ?></span><?php } else {echo $post->post_content;} ?></p>
                                     </a>
                                 </li>
                             <?php endif; ?>
-                        <?php endwhile; ?><?php endif; ?>
+                        <?php endwhile; ?>
+                        <?php endif; ?>
                     </ul>
                 </article>
             <?php endif; ?>
@@ -144,23 +154,23 @@
                     <h2><?php echo $names_main[$i]; ?></h2>
                     <ul class="shadow curve list_length">
                         <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-                            <?php if (has_term($slugm, $taxonomies)): ?>
+                            <?php if (has_term($slugm, $taxonomies)) : ?>
                                  <li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
                             <?php endif; ?>
-                        <?php endwhile; ?><?php endif; ?>
+                        <?php endwhile; ?>
+                        <?php endif; ?>
                     </ul>
                 </article>
                 <?php ++$i; ?>
             <?php } ?>
-        </div>
+        </section>
 
-        <!------------------------------グローバルサイドメニュー------------------------------>
-        <div id="home_right" class="col-md-3">
-            <nav class="shadow"><?php wp_nav_menu(array('container_id' => 'global_side_menu', 'theme_location' => 'globalMenu', 'depth' => 2)); ?></nav>
-        </div>
+        <!----------------------------グローバルサイドメニュー---------------------------->
+        <?php wp_nav_menu(array('container_id' => 'globalSideMenu', 'theme_location' => 'globalMenu', 'depth' => 2, 'container_class' => 'col-md-3 d-none d-sm-block', 'menu_class' => 'shadow')); ?>
+
+    <!---row end--->
     </div>
-    </section>
+<!---postclass end--->
 </div>
 <div id="toTop"><a href="#header">▲このページのトップへ</a></div>
 <?php get_footer(); ?>
-
