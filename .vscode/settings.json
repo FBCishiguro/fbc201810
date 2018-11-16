@@ -1,4 +1,3 @@
 {
-    "appService.deploySubpath": "wp-content\\themes\\wsc7",
-    "appService.defaultWebAppToDeploy": "/subscriptions/425faee1-8343-4055-8975-f7d83ea9f65c/resourceGroups/fbc-jp/providers/Microsoft.Web/sites/fbc-jp"
+    "appService.deploySubpath": "wp-content\\themes\\wsc7"
 }
