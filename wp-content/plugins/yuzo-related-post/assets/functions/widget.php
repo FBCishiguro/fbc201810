@@ -947,24 +947,23 @@ function widget($args,$instance){
 	//if( $wp_query->post_count != 0 ){ // if have result in loop post
 	if( $rebuilt_query ){
 
-		if( $yuzo_option_widget->yuzo_widget_as == 'related' ){
+		// Categories on which related thumbnails will appear
+		$object_current_categories_of_post = get_the_category($post->ID);
+		$array_current_categories_of_post = array();
+		if( $object_current_categories_of_post ){ foreach($object_current_categories_of_post as $value_cat) $array_current_categories_of_post[] = (string)$value_cat->term_id; }
 
-
-			// Categories on which related thumbnails will appear
-			$object_current_categories_of_post = get_the_category($post->ID);
-			$array_current_categories_of_post = array();
-			if( $object_current_categories_of_post ){ foreach($object_current_categories_of_post as $value_cat) $array_current_categories_of_post[] = (string)$value_cat->term_id; }
-
-			if( isset($yuzo_option_widget->categories) && (array)$yuzo_option_widget->categories ){
-				if( !in_array("-1",$yuzo_option_widget->categories) ){
-					$containsSearch = array_intersect($yuzo_option_widget->categories, $array_current_categories_of_post);
-					if( ! $containsSearch ){
-						return;
-					}
+		if( isset($yuzo_option_widget->categories) && (array)$yuzo_option_widget->categories ){
+			if( !in_array("-1",$yuzo_option_widget->categories) ){
+				$containsSearch = array_intersect($yuzo_option_widget->categories, $array_current_categories_of_post);
+				if( ! $containsSearch ){
+					return;
 				}
 			}
+		}
 
+		if( $yuzo_option_widget->yuzo_widget_as == 'related' ){
 
+ 
 			// Exclude category and set categories
 			$array_categories_to_show = array();
 			$string_categories_to_show = null;
@@ -1354,8 +1353,9 @@ function widget($args,$instance){
 
 	} // rebuilt query
 
-	if( isset($yuzo_option_widget->categories) && $yuzo_option_widget->categories ){
-		if( !in_array("-1", (array)$yuzo_option_widget->categories) ){
+	if(  $yuzo_option_widget->yuzo_widget_as != 'list-post' && isset($yuzo_option_widget->categories) && $yuzo_option_widget->categories ){
+		
+		if( !(in_array("-1", (array)$yuzo_option_widget->categories) && count($yuzo_option_widget->categories) == 1) ){
 			if( is_array($yuzo_option_widget->categories) ){
 				// $string_categories_to_show = implode(",",$yuzo_option_widget->categories);		
 				$args_sql['tax_query'] = array(

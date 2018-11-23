@@ -1,19 +1,24 @@
-<?php /* WordPress CMS Theme WSC Project.*/ ?>
+<?php
+/**
+ * WordPress CMS Theme WSC Project.
+ */
+?>
 <!DOCTYPE html>
-<html <?php language_attributes($doctype); ?>>
+<html lang="ja">
 
 <head>
-<meta charset="<?php bloginfo('charset'); ?>">
-<meta name="description" content= <?php bloginfo('description'); ?>>
-<meta name="keywords" content="欧州経済, ニューズレター, 市場調査, サンプル入手サービス, ロングリストショートリスト">
-<meta name="author" content="I/FBC GmbH" />
+<meta charset="UTF-8">
+<title><?php bloginfo('name'); ?></title>
+<meta name="description" content= <?php bloginfo('description'); ?> />
+<meta name="keywords" content="欧州経済, ドイツ経済, ヨーロッパ経済, 欧州市場, ドイツ市場" />
+<meta name="author" content="Ishiguro/FBC GmbH" />
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
 <link rel="SHORTCUT ICON" href="<?php echo get_template_directory_uri(); ?>/img/favicon.ico" />
-
-<title><?php bloginfo('name'); wp_title(); ?></title>
-
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css">
+<link rel="canonical" href="<?php echo home_url(); ?>" />
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous" />
+<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" />
+<link rel="alternate" href="<?php echo home_url(); ?>" hreflang="ja" />
 
 <!-- 最新号日付取得 -->
 <?php $args = array('post_type' => 'sc','posts_per_page' => 1); $postlist = get_posts($args); ?>

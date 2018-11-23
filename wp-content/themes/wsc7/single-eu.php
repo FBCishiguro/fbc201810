@@ -28,7 +28,35 @@
                     <div class="kiji_text">
                         <?php the_content(__('more')); ?>
                     </div>
-                    </section>
+                </section>
+
+                <section id="related" class="shadow curve">
+                    <?php if (function_exists("get_yuzo_related_posts")) { get_yuzo_related_posts(); } ?>
+
+                    <h2>EUウオッチャー無料記事</h2>
+                    <?php $args = array(
+                        'post_type' => '',
+                        'posts_per_page'    => 4,
+                        'orderby'            => 'date',
+                        'tax_query'            => array(
+                            array(
+                                'taxonomy'    => 'free_article',
+                                'field'        => 'slug',
+                                'terms'        => 'eur-free'
+                            )
+                        )
+                    );
+                    $postlist = get_posts($args); ?>
+                    <div class="yuzo_related_post style-3">
+                        <?php foreach ($postlist as $post) : setup_postdata($post); ?>
+                            <div class="relatedthumb yuzo-list">
+                                <a class="link-list yuzo__text--title" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                                <span class="yuzo_text"><?php echo mb_substr(get_the_excerpt(), 0, 100); ?>&hellip;</span>
+                            </div>
+                        <?php endforeach; ?>
+                        <a class="more" href="<?php echo home_url('/'); ?>free_article">過去の無料記事を読む</a>
+                    </div>
+                </section>
             </section>
 
             <!----------------------------グローバルサイドメニュー---------------------------->

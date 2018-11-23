@@ -4,10 +4,15 @@
         <div class="row">
             <!------------------------------メインカラム------------------------------>
             <section id="page_main" class="col-md-9 col">
-                <?php if (is_page(array ('1393', '1095'))) { ?>
+                <?php if (is_page('1095')) { ?>
                     <div id="midashi">
                         <img src = <?php echo get_template_directory_uri(); ?>/img/page/profil_top.jpg" />
-                        <h1><?php wp_title(''); ?><br><span><?php bloginfo('description'); ?></span></h1>
+                        <h1><?php wp_title(''); ?></h1>
+                    </div>
+                    <?php } elseif (is_page('1393')) { ?>
+                    <div id="midashi">
+                    <img src = <?php echo get_template_directory_uri(); ?>/img/page/profil_top.jpg" />
+                        <h1><?php wp_title(''); ?></h1>
                     </div>
                 <?php } else { ?>
                     <div id="midashi">

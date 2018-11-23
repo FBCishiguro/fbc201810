@@ -7,8 +7,8 @@ Author URI: http://ilentheme.com
 Author: iLen
 Requires at least: 4.0
 Tested up to: 4.9.8
-Stable tag: 5.12.72
-Version: 5.12.81
+Stable tag: 5.12.80
+Version: 5.12.84
 License: GPLv2
 
 Related posts a so easy and fast
@@ -61,6 +61,16 @@ Gives shape and life to your post with 'Yuzo related post' ;)
 
 
 == Changelog ==
+= 5.12.84 =
+* Improve: The CSS of the footer was moved to the header
+
+= 5.12.83 =
+* Fixed: Small Css error in a layout
+
+= 5.12.82 =
+* Add: <code>Filter 'YuzoFilter_disabled__relatedpost'</code> allows you to disable the plugin from somewhere.
+* Fixed: I was not showing the posts well in the last list (widget)
+
 = 5.12.81 =
 * Fixed: I was not showing custom CSS changes in the list layout.
 * Improve: Tested in the wordpress version 4.9.8

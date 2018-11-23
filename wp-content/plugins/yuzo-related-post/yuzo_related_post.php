@@ -4,18 +4,11 @@ Plugin Name: Related Posts
 Plugin URI: https://wordpress.org/plugins/yuzo-related-post/
 Description: Related posts so easy and fast
 Tags: related posts,related post,related content,popular posts,last post, most views, widget,related page,content,associate page, associate post
-Version: 5.12.81
+Version: 5.12.84
 Author: iLen
 Author URI: http://ilentheme.com
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd =_s-xclick&hosted_button_id=MSRAUBMB5BZFU
 */
-
-
-
-
-
-
-
 
 // live as if it were the last day of your life
 if ( !class_exists('yuzo_related_post') ) {
@@ -151,7 +144,7 @@ class yuzo_related_post extends yuzo_related_post_make{
 			add_action( 'wp_enqueue_scripts', array( &$this,'script_and_style_front' ) );
 
 			// add custom css
-			add_action( 'wp_footer', array( &$this,'add_custom_css' ) );
+			add_action( 'wp_head', array( &$this,'add_custom_css' ) );
 
 		}
 
@@ -171,6 +164,10 @@ class yuzo_related_post extends yuzo_related_post_make{
 function create_post_related( $content = '' ){
 
 	global $post,$yuzo_options,$wp_query,$if_utils;  
+
+	// Disabled related post
+	if( apply_filters( 'YuzoFilter_disabled__relatedpost', false ) == true ) return $content;
+
 	$orig_post = $post;
 
 	// validate feed init
@@ -989,7 +986,7 @@ function create_post_related( $content = '' ){
 								.yuzo_related_post .relatedthumb{line-height:".((int)$yuzo_options->font_size +2 )."px;background:{$yuzo_options->bg_color->color} !important;color:{$css_text_color}!important;}
 								.yuzo_related_post .relatedthumb:hover{background:{$yuzo_options->bg_color->hover} !important;$css_transitions;color:{$css_text_color_hover}!important;}
 								.yuzo_related_post .relatedthumb a{color:{$css_title_color}!important;}
-								.yuzo_related_post .relatedthumb a:hover{ color:$css_title_color_hover}!important;}
+								.yuzo_related_post .relatedthumb a:hover{ color: {$css_title_color_hover}!important;}
 								.yuzo_related_post .relatedthumb:hover a{ color:{$css_title_color_hover}!important;}
 								.yuzo_related_post .relatedthumb:hover .yuzo__text--title{ color:{$css_title_color_hover}!important;}
 								.yuzo_related_post .yuzo_text, .yuzo_related_post .yuzo_views_post {color:{$css_text_color}!important;}
