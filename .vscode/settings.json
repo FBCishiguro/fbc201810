@@ -1,3 +1,4 @@
 {
-    "appService.deploySubpath": "wp-content\\themes\\wsc7"
+    "appService.deploySubpath": "wp-content\\themes\\wsc7",
+    "appService.defaultWebAppToDeploy": "None"
 }
