@@ -3,17 +3,17 @@ Contributors: chriscct7, smub
 Donate link: http://www.wpbeginner.com/wpbeginner-needs-your-help/
 Tags: WordPress analytics, google analytics, google analytics dashboard, google analytics widget, WooCommerce stats, analytics dashboard, universal google analytics, statistics, tracking, stats, google, google analytics by yoast, ga, monster insights, monsterinsights, universal analytics, web stats, ecommerce, ecommerce tracking
 Requires at least: 3.8.0
-Tested up to: 4.9
-Stable tag: 7.3.0
+Tested up to: 5.0
+Stable tag: 7.3.2
 License: GPL v3
 
-The best Google Analytics plugin for WordPress. See how visitors find and use your website, so you can keep them coming back.
+The best Google Analytics plugin for WordPress. See how visitors find and use your website, so you can keep them coming back. 
 
 == Description ==
 
 = Google Analytics Plugin for WordPress =
 
-We believe that it's easy to double your traffic and sales when you know exactly how people find and use your website. <a href="https://www.monsterinsights.com/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion" rel="friend" title="MonsterInsights">MonsterInsights</a> shows you the stats that matter, so you can grow your business with confidence. 
+We believe that it's easy to double your traffic and sales when you know exactly how people find and use your website. <a href="https://www.monsterinsights.com/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion" rel="friend" title="MonsterInsights">MonsterInsights</a> shows you the stats that matter, so you can grow your business with confidence.
 
 With over 2 million active installs, MonsterInsights is the most popular Google Analytics plugin for WordPress.
 
@@ -273,6 +273,10 @@ You can also learn about other <a href="http://www.wpbeginner.com/category/plugi
 4. Want more features? <a href="https://www.monsterinsights.com/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion">Purchase MonsterInsights Pro</a>!
 
 == Changelog ==
+= 7.3.2: November 27, 2018 =
+- Fixed: Issue on some Lite installs where timezone differences caused users to see an error related to custom date ranges.
+- Fixed: Issue where some users were unable to reauthenticate their site.
+
 = 7.3.0: October 30, 2018 =
 - New: We've added new custom link attribution, so now you can easily set custom link categories, actions, and labels, which MonsterInsights will use with precedence over our comprehensive automatic link detection, and is compatible with our AMP addon. For usage instructions, see our documentation on <a href="https://www.monsterinsights.com/docs/custom-link-attribution/">custom link attribution</a>.
 - Tweak: Better error handling for reports.

@@ -1,3 +1,5 @@
 .vscode/settings.json
 wp-config.php
 wp-config-github.php
+wp-config_lc.php
+wp-config_sv.php
